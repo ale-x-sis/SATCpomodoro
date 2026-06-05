@@ -5,15 +5,15 @@ export const satcActivities = [
     category: "creative",
     durationMinutes: 5,
     prompt: "Imagine a storyline you wish took a different path or progressed differently.",
-    reflectionQuestion: "What would it look like if you were in the writer’s studio?✏️",
+    reflectionQuestion: "What would it look like if you were in the writer’s studio? ✏️",
   },
   {
     id: "satc-002",
     title: "Carrie: Column Prompt",
-    category: "focus",
+    category: "creative",
     durationMinutes: 5,
     prompt: "Finish this sentence: “I couldn’t help but wonder…” with something about work, friendship, dating, focus, or city life.",
-    reflectionQuestion: "What thought came up that surprised you?💭",
+    reflectionQuestion: "What thought came up that surprised you? 💭",
   },
   {
     id: "satc-003",
@@ -21,7 +21,7 @@ export const satcActivities = [
     category: "focus",
     durationMinutes: 5,
     prompt: "Write down or meditate on one thing you are overcomplicating, then rewrite it as advice from Miranda.",
-    reflectionQuestion: "What became simpler once you named the next step?🤓",
+    reflectionQuestion: "What became simpler once you named the next step? 🤓",
   },
   {
     id: "satc-004",
@@ -29,7 +29,7 @@ export const satcActivities = [
     category: "focus",
     durationMinutes: 5,
     prompt: "Write every task or worry on your mind without organizing it yet or judging yourself.",
-    reflectionQuestion: "What is one item you can handle today without exhausting yourself?📋",
+    reflectionQuestion: "What is one item you can handle today without exhausting yourself? 📋",
   },
   {
     id: "satc-005",
@@ -37,7 +37,7 @@ export const satcActivities = [
     category: "confidence",
     durationMinutes: 5,
     prompt: "Think of one small boundary you could honor today, even if you do not announce it to anyone.",
-    reflectionQuestion: "What would respecting that boundary make easier for you?💡",
+    reflectionQuestion: "What would respecting that boundary make easier for you? 💡",
   },
   {
     id: "satc-006",
@@ -45,7 +45,7 @@ export const satcActivities = [
     category: "confidence",
     durationMinutes: 5,
     prompt: "Pick one item near you - outfit, accessory, notebook, mug, anything, and decide which character energy it gives.",
-    reflectionQuestion: "What made you choose that energy?💅🏾",
+    reflectionQuestion: "What made you choose that energy? 💅🏾",
   },
   {
     id: "satc-007",
@@ -53,23 +53,23 @@ export const satcActivities = [
     category: "calm",
     durationMinutes: 5,
     prompt: "Look out a window, step outside, or walk a short lap. Notice three things happening around you.",
-    reflectionQuestion: "Did changing your physical view change your mental view?🪟",
+    reflectionQuestion: "Did changing your physical view change your mental view? 🪟",
   },
   {
     id: "satc-008",
     title: "Charlotte: Soft Reset",
-    category: "connection",
+    category: "calm",
     durationMinutes: 5,
     prompt: "Take a few minutes to make one tiny part of your space feel nicer or more intentional. Add flowers, light a candle, or try adjusting your lighting.",
-    reflectionQuestion: "What changed in your mood after changing the space?🌻",
+    reflectionQuestion: "What changed in your mood after changing the space? 🌻",
   },
   {
     id: "satc-009",
     title: "Brunch Table Debate",
     category: "connection",
     durationMinutes: 5,
-    prompt: "Imagine your current problem being discussed at brunch. Now imagine what each of the four friends would notice first?",
-    reflectionQuestion: "Which perspective was actually the most useful?🔮",
+    prompt: "Imagine your current problem being discussed at brunch. What would each of the four friends notice first?",
+    reflectionQuestion: "Which perspective was actually the most useful? 🔮",
   },
   {
     id: "satc-010",
@@ -87,4 +87,12 @@ export const satcActivities = [
     prompt: "Aidan's dog chewed up Carrie's Manolos. Design her a new pair with whatever you have nearby.",
     reflectionQuestion: "How much do you think Aidan should pay for your design? 👠"
   },
+  {
+  id: "satc-012",
+  title: "Main Character Maintenance",
+  category: "calm",
+  durationMinutes: 5,
+  prompt: "Do one small maintenance task: drink water, stretch, fix your posture, clear your tabs, or reset your bag.",
+  reflectionQuestion: "What tiny thing made you feel more put together? ✨",
+},
 ];
