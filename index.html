@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrie's Column Timer</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <h1>Carrie's Column Timer</h1>
+
+    <section id="timer-section">
+      <h2 id="mode-label">AND JUST LIKE CLOCKWORK...</h2>
+
+      <p id="timer-display">25:00</p>
+
+      <div class="button-row">
+        <button id="start-button" class="timer-button">Start</button>
+        <button id="pause-button" class="timer-button">Pause</button>
+        <button id="reset-button" class="timer-button">Reset</button>
+      </div>
+
+      <p id="status-message">Abso-f*ing-lutely time to focus.</p>
+    </section>
+
+    <section id="break-section">
+      <h2>MANHATTAN INTERMISSION</h2>
+
+      <div id="activity-card" class="activity-card">
+        <p class="card-label">Vibe</p>
+        <span id="activity-category" class="category-badge">creative</span>
+
+        <p class="card-label">The Headline</p>
+        <h3 id="activity-title">Quick Draw Aidan Shaw</h3>
+
+        <p class="card-label">Carrie's Assignment</p>
+        <p id="activity-prompt">Aidan's dog chewed up Carrie's Manolos...</p>
+
+        <p class="card-label">I Couldn't Help But Wonder...</p>
+        <p id="reflection-question">How much should Aidan pay?</p>
+      </div>
+
+      <button id="new-activity-button">New Activity</button>
+    </section>
+
+    <p>Columns Filed: <span id="session-count">0</span></p>
+  </main>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>ƒ
