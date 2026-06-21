@@ -176,3 +176,7 @@ p {
 #session-count {
   font-weight: 800;
 }
+/* Utility: hides anything with the hidden attribute */
+[hidden] {
+  display: none !important;
+}
