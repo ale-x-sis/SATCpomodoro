@@ -1,0 +1,42 @@
+export const satcActivities = [
+  {
+    id: "satc-001",
+    title: "I Couldn't Help But Wonder",
+    category: "creative",
+    durationMinutes: 5,
+    prompt: "Imagine a storyline you wish took a different path or progressed differently.",
+    reflectionQuestion: "What would it look like if you were in the writer’s studio? ✏️",
+  },
+  {
+    id: "satc-002",
+    title: "Manhattan Reset",
+    category: "calm",
+    durationMinutes: 5,
+    prompt: "Step away from the screen, stretch your neck and shoulders, and take a few slow breaths.",
+    reflectionQuestion: "What feels less annoying after five minutes away?",
+  },
+  {
+    id: "satc-003",
+    title: "Hot Take, Cold Coffee",
+    category: "brain dump",
+    durationMinutes: 5,
+    prompt: "Write one strong opinion you have about a character choice, outfit, apartment, date, or plot point.",
+    reflectionQuestion: "What is your actual evidence for the take?",
+  },
+  {
+    id: "satc-004",
+    title: "The Group Chat Council",
+    category: "reflection",
+    durationMinutes: 5,
+    prompt: "Pick a tiny problem and imagine what each of the four friends would say about it.",
+    reflectionQuestion: "Whose advice would you ignore immediately?",
+  },
+  {
+    id: "satc-005",
+    title: "Quick Draw Aidan Shaw",
+    category: "creative",
+    durationMinutes: 5,
+    prompt: "Aidan's dog chewed up Carrie's Manolos. Design her a new pair with whatever you have nearby.",
+    reflectionQuestion: "How much do you think Aidan should pay for your design? 👠",
+  },
+];
