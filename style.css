@@ -1,201 +1,299 @@
-/* ========== Baseline (makes the page readable) ========== */
+/* =========================================================
+   Carrieâ€™s Column Timer â€” Polished V1.1 CSS
+   Replace your current style.css with this fileâ€™s contents.
+   No JavaScript changes needed.
+   ========================================================= */
+
+:root {
+  --bg: #f7f2eb;
+  --bg-soft: #fbf8f3;
+  --surface: #ffffff;
+  --surface-warm: #fffdf9;
+  --text: #171412;
+  --muted: #6f6760;
+  --faint: #9a9088;
+  --border: #e4d9cf;
+  --border-soft: #f0e8df;
+  --accent: #2f3cff;
+  --accent-soft: #eef0ff;
+  --ink: #111111;
+  --shadow: 0 18px 45px rgba(35, 28, 20, 0.08);
+  --shadow-soft: 0 8px 22px rgba(35, 28, 20, 0.06);
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 11px;
+  --serif: Georgia, "Times New Roman", Times, serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ========== Baseline ========== */
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
+  min-height: 100%;
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--sans);
   line-height: 1.5;
-  background: #f7f5f0;
-  color: #1a1714;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 34rem),
+    linear-gradient(135deg, #f9f4ec 0%, #f5efe7 46%, #efe8df 100%);
+  color: var(--text);
 }
 
-/* This targets <main class="app"> in your HTML */
+button,
+textarea {
+  font: inherit;
+}
+
+/* Main app shell */
 .app {
-  max-width: 760px;
+  width: min(100% - 32px, 860px);
   margin: 0 auto;
-  padding: 32px 18px 60px;
+  padding: 46px 0 70px;
 }
 
-/* Headings */
+/* ========== Header ========== */
+
 h1 {
-  font-size: 28px;
-  margin: 0 0 18px;
-  letter-spacing: -0.3px;
+  max-width: 720px;
+  margin: 0 auto 22px;
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: 0.98;
+  letter-spacing: -1.8px;
+  color: var(--ink);
 }
 
 h2 {
-  font-size: 14px;
-  margin: 0 0 10px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  margin: 0 0 12px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #6b6560;
+  color: var(--muted);
 }
 
 h3 {
-  font-size: 18px;
-  margin: 6px 0 10px;
-  letter-spacing: -0.2px;
+  font-size: 22px;
+  line-height: 1.1;
+  margin: 7px 0 12px;
+  letter-spacing: -0.5px;
 }
 
-/* ========== App sections ========== */
+/* ========== Shared section cards ========== */
 
 #timer-section,
 #break-section,
 #report-section {
-  background: #ffffff;
-  border: 1px solid #e2ddd6;
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 4vw, 34px);
+  margin: 0 auto 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
 }
 
-/* Timer display */
+/* ========== Timer section ========== */
+
+#mode-label {
+  color: var(--muted);
+}
+
 #timer-display {
-  font-size: 56px;
-  font-weight: 700;
-  margin: 6px 0 14px;
-  letter-spacing: -1px;
+  font-size: clamp(74px, 12vw, 118px);
+  line-height: 0.9;
+  font-weight: 850;
+  margin: 20px 0 26px;
+  letter-spacing: -4px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
 }
 
-/* Buttons row */
+/* ========== Buttons ========== */
+
 .button-row {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 12px;
+  align-items: center;
+  margin-bottom: 14px;
 }
 
-/* Shared look for app buttons */
 .timer-button {
-  border: 1px solid #e2ddd6;
-  background: #ffffff;
-  color: #1a1714;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 750;
   cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    border-color 120ms ease,
+    background 120ms ease;
 }
 
 .timer-button:hover {
-  background: #fbfaf8;
-  border-color: #cfc7bf;
+  background: var(--surface-warm);
+  border-color: #cfc2b5;
+  box-shadow: 0 10px 26px rgba(35, 28, 20, 0.09);
 }
 
 .timer-button:active {
   transform: translateY(1px);
+  box-shadow: 0 5px 14px rgba(35, 28, 20, 0.08);
 }
 
 .timer-button:focus-visible {
-  outline: 3px solid rgba(61, 78, 255, 0.25);
-  outline-offset: 2px;
+  outline: 3px solid rgba(47, 60, 255, 0.22);
+  outline-offset: 3px;
+}
+
+/* Make the manual reveal button feel like the â€œspecialâ€ action */
+#reveal-break-button {
+  margin-top: 4px;
+  background: var(--accent-soft);
+  border-color: #d7dcff;
+  color: var(--accent);
 }
 
 /* Status messages */
 #status-message,
 #break-status-message {
-  margin: 12px 0 0;
-  color: #6b6560;
-  font-size: 14px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 16px;
 }
 
 /* ========== Break section + Activity card ========== */
 
 .activity-card {
-  border: 1px solid #efeae2;
-  border-radius: 12px;
-  padding: 16px;
-  background: #fbfaf8;
-  margin: 12px 0 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: clamp(18px, 3vw, 24px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(251, 248, 243, 0.94));
+  margin: 14px 0 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
-/* These are the “static labels” like Vibe, The Headline, etc. */
 .card-label {
   display: block;
   margin: 0;
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #9b948d;
+  color: var(--faint);
 }
 
-/* Category badge (the value like creative/calm) */
 .category-badge {
   display: inline-block;
-  margin: 6px 0 12px;
-  padding: 4px 10px;
+  margin: 7px 0 16px;
+  padding: 5px 11px;
   border-radius: 999px;
   font-size: 12px;
-  font-weight: 700;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  background: #eef0ff;
-  color: #3d4eff;
-  border: 1px solid #d6daff;
+  font-weight: 800;
+  font-family: var(--mono);
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #d7dcff;
 }
 
-/* Prompt + reflection text spacing */
 #activity-prompt,
 #reflection-question {
-  margin: 6px 0 12px;
-  color: #3d3830;
-  font-size: 14px;
+  margin: 7px 0 16px;
+  color: #352f2a;
+  font-size: 16px;
 }
 
 /* Response field */
 #activity-response {
   width: 100%;
-  margin-top: 8px;
-  padding: 12px;
-  border: 1px solid #e2ddd6;
-  border-radius: 10px;
-  font: inherit;
+  min-height: 126px;
+  margin-top: 9px;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text);
   resize: vertical;
-  background: #ffffff;
-  color: #1a1714;
+  box-shadow: inset 0 1px 2px rgba(35, 28, 20, 0.04);
+}
+
+#activity-response::placeholder {
+  color: #b0a8a0;
 }
 
 #activity-response:focus {
-  outline: 3px solid rgba(61, 78, 255, 0.18);
+  outline: 3px solid rgba(47, 60, 255, 0.16);
   border-color: #cfd4ff;
 }
 
-/* ========== Report section ========== */
+/* ========== Report / â€œView Columnâ€ section ========== */
+
+#report-section {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 253, 249, 0.98));
+}
 
 .newspaper-kicker {
-  margin: 0 0 4px;
+  margin: 0 0 5px;
   font-size: 12px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #6b6560;
+  color: var(--muted);
 }
 
 .newspaper-title {
-  margin: 0 0 14px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 34px;
-  line-height: 1.05;
-  letter-spacing: -0.6px;
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 0.95;
+  letter-spacing: -1.5px;
   text-transform: none;
-  color: #1a1714;
+  color: var(--ink);
 }
 
 .report-stats {
-  border-top: 1px solid #e2ddd6;
-  border-bottom: 1px solid #e2ddd6;
-  padding: 10px 0;
-  margin-bottom: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  margin-bottom: 18px;
 }
 
 .report-stats p {
-  margin: 4px 0;
+  margin: 0;
+  color: var(--muted);
+}
+
+.report-stats strong {
+  color: var(--text);
+}
+
+.report-entries {
+  font-family: var(--serif);
 }
 
 .report-entry {
-  border-bottom: 1px solid #efeae2;
-  padding: 12px 0;
+  border-bottom: 1px solid var(--border-soft);
+  padding: 18px 0;
+}
+
+.report-entry:first-child {
+  padding-top: 4px;
 }
 
 .report-entry:last-child {
@@ -203,27 +301,60 @@ h3 {
 }
 
 .report-entry h3 {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 22px;
-  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.05;
+  margin: 0 0 8px;
+  letter-spacing: -0.6px;
 }
 
 .report-entry p {
-  margin: 6px 0;
+  margin: 8px 0;
+  font-size: 17px;
 }
 
-/* Bottom counter */
-p {
-  margin: 10px 0 0;
+/* ========== Bottom counter ========== */
+
+.app > p:last-child {
+  width: min(100%, 860px);
+  margin: 22px auto 0;
+  font-size: 18px;
+  color: var(--muted);
 }
 
 #session-count,
 #report-session-count,
 #response-count {
-  font-weight: 800;
+  font-weight: 850;
+  color: var(--ink);
 }
 
 /* Utility: hides anything with the hidden attribute */
 [hidden] {
   display: none !important;
+}
+
+/* ========== Small screens ========== */
+
+@media (max-width: 560px) {
+  .app {
+    width: min(100% - 24px, 860px);
+    padding-top: 28px;
+  }
+
+  h1 {
+    letter-spacing: -1.1px;
+  }
+
+  #timer-display {
+    letter-spacing: -2px;
+  }
+
+  .timer-button {
+    width: 100%;
+  }
+
+  .report-stats {
+    grid-template-columns: 1fr;
+  }
 }
