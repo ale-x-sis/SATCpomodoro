@@ -1,0 +1,229 @@
+/* ========== Baseline (makes the page readable) ========== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background: #f7f5f0;
+  color: #1a1714;
+}
+
+/* This targets <main class="app"> in your HTML */
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 18px 60px;
+}
+
+/* Headings */
+h1 {
+  font-size: 28px;
+  margin: 0 0 18px;
+  letter-spacing: -0.3px;
+}
+
+h2 {
+  font-size: 14px;
+  margin: 0 0 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b6560;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 6px 0 10px;
+  letter-spacing: -0.2px;
+}
+
+/* ========== App sections ========== */
+
+#timer-section,
+#break-section,
+#report-section {
+  background: #ffffff;
+  border: 1px solid #e2ddd6;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+/* Timer display */
+#timer-display {
+  font-size: 56px;
+  font-weight: 700;
+  margin: 6px 0 14px;
+  letter-spacing: -1px;
+}
+
+/* Buttons row */
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+/* Shared look for app buttons */
+.timer-button {
+  border: 1px solid #e2ddd6;
+  background: #ffffff;
+  color: #1a1714;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.timer-button:hover {
+  background: #fbfaf8;
+  border-color: #cfc7bf;
+}
+
+.timer-button:active {
+  transform: translateY(1px);
+}
+
+.timer-button:focus-visible {
+  outline: 3px solid rgba(61, 78, 255, 0.25);
+  outline-offset: 2px;
+}
+
+/* Status messages */
+#status-message,
+#break-status-message {
+  margin: 12px 0 0;
+  color: #6b6560;
+  font-size: 14px;
+}
+
+/* ========== Break section + Activity card ========== */
+
+.activity-card {
+  border: 1px solid #efeae2;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fbfaf8;
+  margin: 12px 0 14px;
+}
+
+/* These are the “static labels” like Vibe, The Headline, etc. */
+.card-label {
+  display: block;
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9b948d;
+}
+
+/* Category badge (the value like creative/calm) */
+.category-badge {
+  display: inline-block;
+  margin: 6px 0 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: #eef0ff;
+  color: #3d4eff;
+  border: 1px solid #d6daff;
+}
+
+/* Prompt + reflection text spacing */
+#activity-prompt,
+#reflection-question {
+  margin: 6px 0 12px;
+  color: #3d3830;
+  font-size: 14px;
+}
+
+/* Response field */
+#activity-response {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #e2ddd6;
+  border-radius: 10px;
+  font: inherit;
+  resize: vertical;
+  background: #ffffff;
+  color: #1a1714;
+}
+
+#activity-response:focus {
+  outline: 3px solid rgba(61, 78, 255, 0.18);
+  border-color: #cfd4ff;
+}
+
+/* ========== Report section ========== */
+
+.newspaper-kicker {
+  margin: 0 0 4px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b6560;
+}
+
+.newspaper-title {
+  margin: 0 0 14px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 34px;
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+  text-transform: none;
+  color: #1a1714;
+}
+
+.report-stats {
+  border-top: 1px solid #e2ddd6;
+  border-bottom: 1px solid #e2ddd6;
+  padding: 10px 0;
+  margin-bottom: 14px;
+}
+
+.report-stats p {
+  margin: 4px 0;
+}
+
+.report-entry {
+  border-bottom: 1px solid #efeae2;
+  padding: 12px 0;
+}
+
+.report-entry:last-child {
+  border-bottom: 0;
+}
+
+.report-entry h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.report-entry p {
+  margin: 6px 0;
+}
+
+/* Bottom counter */
+p {
+  margin: 10px 0 0;
+}
+
+#session-count,
+#report-session-count,
+#response-count {
+  font-weight: 800;
+}
+
+/* Utility: hides anything with the hidden attribute */
+[hidden] {
+  display: none !important;
+}
