@@ -27,7 +27,7 @@ const sessionCount = document.querySelector("#session-count");
 // ========== APP STATE ==========
 // State = what the app needs to remember.
 
-const FOCUS_SECONDS = 10;
+const FOCUS_SECONDS = 25 * 60;
 
 let mode = "focus";
 let timeLeft = FOCUS_SECONDS;
