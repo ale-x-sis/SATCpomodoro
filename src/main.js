@@ -172,14 +172,59 @@ function showReportMode() {
 
   renderReport();
 }
+function requestNotificationPermission() {
+  if ("Notification" in window && Notification.permission === "default") {
+    Notification.requestPermission();
+  }
+}
 
+function sendBreakNotification() {
+  if ("Notification" in window && Notification.permission === "granted") {
+    new Notification("Carrie’s Column Timer", {
+      body: "25 minutes are up. Manhattan Intermission time.",
+    });
+  }
+}
+
+function playCompletionSound() {
+  const audioContext = new AudioContext();
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+
+  oscillator.type = "sine";
+  oscillator.frequency.setValueAtTime(880, audioContext.currentTime);
+
+  gainNode.gain.setValueAtTime(0.001, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.2, audioContext.currentTime + 0.02);
+  gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.6);
+
+  oscillator.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+
+  oscillator.start();
+  oscillator.stop(audioContext.currentTime + 0.65);
+}
+
+function completeFocusSession() {
+  completedSessions = completedSessions + 1;
+  updateSessionCount();
+
+  document.title = "Break Time — Carrie’s Column Timer";
+
+  playCompletionSound();
+  sendBreakNotification();
+
+  showBreakMode({
+    completedSession: true,
+  });
+}
 // ========== TIMER BEHAVIOR ==========
 
 function startTimer() {
   if (isTimerRunning) {
     return;
   }
-
+requestNotificationPermission();
   isTimerRunning = true;
   statusMessage.textContent = "Focus mode is running.";
 
@@ -187,14 +232,9 @@ function startTimer() {
     timeLeft = timeLeft - 1;
     renderTimer();
 
-    if (timeLeft <= 0) {
-      completedSessions = completedSessions + 1;
-      updateSessionCount();
-
-      showBreakMode({
-        completedSession: true,
-      });
-    }
+   if (timeLeft <= 0) {
+  completeFocusSession();
+}
   }, 1000);
 }
 
