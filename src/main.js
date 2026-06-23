@@ -37,7 +37,7 @@ const reportEntries = document.querySelector("#report-entries");
 // ========== APP STATE ==========
 // State = what the app needs to remember.
 
-const FOCUS_SECONDS = 25 * 60;
+const FOCUS_SECONDS = 10;
 // For testing only, you can temporarily use:
 // const FOCUS_SECONDS = 10;
 
